@@ -64,6 +64,7 @@ swaylock=""
 thunar=""
 xdph=""
 zsh=""
+neofetch=""
 
 # Define the directory where your scripts are located
 script_directory=install-scripts
@@ -130,6 +131,8 @@ ask_yes_no "-Install XDG-DESKTOP-PORTAL-HYPRLAND? (For proper Screen Share ie OB
 printf "\n"
 ask_yes_no "-Do you want to install zsh and oh-my-zsh?" zsh
 printf "\n"
+ask_yes_no "-Do you want to install neofetch?" neofetch
+printf "\n"
 ask_yes_no "-Install swaylock-effects? (recommended - for screen locks)" swaylock
 printf "\n"
 ask_yes_no "-Do you want to install nwg-look? (GTK Theming app - lxappearance-like)" nwg
@@ -191,7 +194,10 @@ fi
 if [ "$nwg" == "Y" ]; then
     execute_script "nwg-look.sh"
 fi
+if [ "$neofetch" == "Y" ]; then
+    execute_script "neofetch.sh"
 
+fi
 if [ "$dots" == "Y" ]; then
     execute_script "dotfiles.sh"
 
